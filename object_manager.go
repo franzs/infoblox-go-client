@@ -599,7 +599,7 @@ func (objMgr *ObjectManager) DeletePTRRecord(ref string) (string, error) {
 func (objMgr *ObjectManager) CreateMultiObject(req *MultiRequest) ([]map[string]interface{}, error) {
 
 	conn := objMgr.connector.(*Connector)
-	queryParams := QueryParams{forceProxy: false}
+	queryParams := QueryParams{forceProxy: true}
 	res, err := conn.makeRequest(CREATE, req, "", queryParams)
 
 	if err != nil {
